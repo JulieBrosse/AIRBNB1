@@ -1,0 +1,29 @@
+<h1>New Garden</h1>
+<%= simple_form_for(@garden) do |f| %>
+  <% if @garden.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @garden.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.input :price %>
+  <%= f.input :type_price %>
+  <%= f.input :availability %>
+  <%= f.input :address %>
+  <%= f.input :surface %>
+  <%= f.input :plant_type %>
+  <%= f.submit %>
+<% end %>
+
+
+
+
+
+
+

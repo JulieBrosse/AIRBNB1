@@ -1,0 +1,14 @@
+<h1>Gardens available</h1>
+<% @gardens.each do |garden| %>
+  <ul>
+    <li><p>
+    <%= link_to "#{garden.title}", garden_path(:id)  %> --
+    <%= garden.content %> --
+    <%= garden.surface %> m2 --
+
+    <%= link_to "Delete", garden_path(garden),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+    </p><li>
+  </ul>
+<% end %>
