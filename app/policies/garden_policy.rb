@@ -15,7 +15,7 @@ class GardenPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.user == current_user
   end
 
 end

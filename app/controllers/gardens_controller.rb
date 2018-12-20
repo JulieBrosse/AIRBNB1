@@ -17,7 +17,7 @@ class GardensController < ApplicationController
   end
 
   def create
-    @garden = policy_scope(Garden).new(garden_params)
+    @garden = current_user.gardens.build(garden_params)
     authorize @garden
     @garden.save
     redirect_to gardens_path
